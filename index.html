@@ -53,10 +53,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: 
-                radial-gradient(ellipse at center, rgba(139,69,19,0.3) 0%, transparent 60%),
-                linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
-            z-index: 2;
+			/* Bottom layer: image first */
+			background: 
+				url('tavern2.png') center/cover no-repeat, /* image */
+				linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), /* dark overlay */
+				radial-gradient(circle at center, rgba(139,69,19,0.1), transparent 60%); /* subtle atmosphere */
+
+			z-index: -12;
         }
         
         .hero-content {
@@ -170,6 +173,12 @@
             font-weight: 600;
             color: #ffd700;
         }
+		
+		.nav-logo img {
+			height: 40px; /* adjust as needed */
+			width: auto; /* keeps aspect ratio */
+			display: block;
+		}
         
         .nav-links {
             display: flex;
@@ -342,6 +351,14 @@
             transform: scale(1.05);
             border-color: rgba(212,175,55,0.8);
         }
+		
+		.screenshot img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover; /* makes sure image fills the box without distortion */
+			border-radius: 10px;
+			transition: transform 0.3s ease, border-color 0.3s ease;
+		}
         
         /* Footer */
         footer {
@@ -387,7 +404,7 @@
             font-size: 0.9rem;
         }
         
-        /* Mobile Responsiveness */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -395,6 +412,14 @@
             
             .hero-content {
                 padding: 0 1rem;
+            }
+            
+            header {
+                background-attachment: scroll;
+            }
+            
+            .floating-rune {
+                font-size: 1.5rem;
             }
             
             .features, .screenshots {
@@ -420,12 +445,15 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">Shadowfire</div>
+            <!--div class="nav-logo">Shadowfire</div-->
+			<div class="nav-logo">
+				<img src="logo2.png" alt="Shadowfire Logo">
+			</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#download">Download</a></li>
+                li><a href="https://www.roblox.com/download">Download</a></li>
             </ul>
         </div>
     </nav>
@@ -435,7 +463,7 @@
         <div class="hero-content">
             <h1 class="logo">REALMS OF SHADOWFIRE</h1>
             <p class="tagline">Forge your legend in realms where magic meets steel</p>
-            <a href="#download" class="cta-button">BEGIN YOUR QUEST</a>
+            <a href="https://tinyurl.com/avertole" class="cta-button">BEGIN YOUR QUEST</a>
         </div>
     </header>
     
@@ -480,10 +508,17 @@
     <section class="screenshots" id="gallery">
         <h2>Glimpse Into the Realms</h2>
         <div class="screenshot-gallery">
-            <div class="screenshot">Character Creation</div>
+            <!--div class="screenshot">Character Creation</div>
             <div class="screenshot">Dragon's Lair</div>
             <div class="screenshot">Mystical Forest</div>
-            <div class="screenshot">Epic Battle</div>
+            <div class="screenshot">Epic Battle</div-->
+			
+            <div class="screenshot"><img src="screenshots/book.png" alt="Player's Handbook"></div>
+            <div class="screenshot"><img src="screenshots/farm1.png" alt="Farm1"></div>
+            <div class="screenshot"><img src="screenshots/breadshop.png" alt="Bakery"></div>
+            <div class="screenshot"><img src="screenshots/town.png" alt="Town"></div>
+            <div class="screenshot"><img src="screenshots/farm2.png" alt="Farm2"></div>
+            <div class="screenshot"><img src="screenshots/dungeons.png" alt="Dungeons"></div>
         </div>
     </section>
     
@@ -498,7 +533,7 @@
                 <a href="#support">Support</a>
                 <a href="#store">Online Store</a>
             </div>
-            <p class="copyright">&copy; 2024 Shadowfire Games. All rights reserved. Forge your destiny.</p>
+            <p class="copyright">&copy; 2024 Realmsy Games. All rights reserved. Forge your destiny.</p>
         </div>
     </footer>
     
