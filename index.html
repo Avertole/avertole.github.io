@@ -59,7 +59,7 @@
 				linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), /* dark overlay */
 				radial-gradient(circle at center, rgba(139,69,19,0.1), transparent 60%); /* subtle atmosphere */
 
-			z-index: -12;
+			z-index: 0;
         }
         
         .hero-content {
@@ -106,6 +106,8 @@
         }
         
         .cta-button {
+			position: relative; /* needed for z-index to work */
+			z-index: 120; /* higher than header content layers */
             display: inline-block;
             padding: 1rem 2.5rem;
             font-size: 1.2rem;
@@ -453,7 +455,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                li><a href="https://www.roblox.com/download">Download</a></li>
+                <li><a href="https://www.roblox.com/download">Download</a></li>
             </ul>
         </div>
     </nav>
